@@ -1,0 +1,194 @@
+{
+  "name": "coc-todo-tree",
+  "version": "0.0.1",
+  "description": "Todo tree extension for coc.nvim, forked from Gruntfuggly/todo-tree.",
+  "main": "lib/index.js",
+  "engines": {
+    "coc": "^0.0.82"
+  },
+  "keywords": [
+    "coc",
+    "coc.nvim",
+    "todo",
+    "coc-tree"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "scripts": {
+    "lint": "eslint src --ext ts",
+    "clean": "rimraf lib",
+    "watch": "yarn && NODE_ENV=development node esbuild.js --watch",
+    "build": "yarn && NODE_ENV=development node esbuild.js",
+    "prepare": "husky install && yarn clean"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,cjs,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,less,sass,scss}": [
+      "prettier --write"
+    ]
+  },
+  "repository": "git@github.com:hexh250786313/coc-todo-tree.git",
+  "author": "hexh <250786313@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "esbuild": "^0.15.7",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "coc.nvim": "^0.0.82",
+    "fs-extra": "^10.1.0",
+    "typescript": "^4.8.3",
+    "vscode-uri": "^3.0.6"
+  },
+  "dependencies": {},
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "coc-todo-tree configuration",
+      "properties": {
+        "todo-tree.tags": {
+          "type": "array",
+          "default": [
+            {
+              "tagName": "todo",
+              "regex": "TODO",
+              "icon": {
+                "text": "",
+                "hlGroup": "Normal"
+              }
+            }
+          ],
+          "description": "tags rule",
+          "items": {
+            "type": "object"
+          }
+        },
+        "todo-tree.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "enable extension: Default: true"
+        },
+        "todo-tree.defaultView": {
+          "type": "string",
+          "default": "flat",
+          "description": "default view mode. Default: \"flat\"",
+          "enum": [
+            "tagsOnly",
+            "flat",
+            "tree"
+          ]
+        },
+        "todo-tree.groupByTag": {
+          "type": "boolean",
+          "default": false,
+          "description": "group by tag. Default: false"
+        },
+        "todo-tree.maxGrepColumns": {
+          "type": "integer",
+          "default": 300,
+          "description": "see: --max-columns (rg --help). only work for no customCommand set. Default: 300"
+        },
+        "todo-tree.maxPreviewWidth": {
+          "type": "integer",
+          "default": 300,
+          "description": "columns amount of preview window. Default: 300"
+        },
+        "todo-tree.customCommand": {
+          "type": "string",
+          "default": "",
+          "description": "default grep command. Default: \"rg --no-messages --vimgrep -H --column --max-columns 300 --max-columns-preview --color never -e\""
+        },
+        "todo-tree.folderIcon": {
+          "type": "object",
+          "properties": {
+            "text": "string",
+            "hlGroup": "string"
+          },
+          "default": {
+            "text": "",
+            "hlGroup": "Normal"
+          },
+          "description": "folder icon. Default: null"
+        },
+        "todo-tree.fileIcon": {
+          "type": "object",
+          "properties": {
+            "text": "string",
+            "hlGroup": "string"
+          },
+          "default": {
+            "text": "",
+            "hlGroup": "Normal"
+          },
+          "description": "file icon. Default: null"
+        },
+        "todo-tree.parentNodeHighlightEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "highlight the parent node text. Can not to override the highlight group(CocSearch). Default: true"
+        },
+        "todo-tree.groupTagIconHighlight": {
+          "type": "string",
+          "default": "",
+          "description": "highlight for group tag icon when groupByTag enabled. Default: Same as tags.icon.hlGroup"
+        },
+        "todo-tree.refreshItemsKey": {
+          "type": "string",
+          "default": "r",
+          "description": "map key for refresh items. Default: \"r\""
+        },
+        "todo-tree.toggleGroupByTagKey": {
+          "type": "string",
+          "default": "c",
+          "description": "map key for toggle group by tag. Default: \"c\""
+        },
+        "todo-tree.togglePreviewKey": {
+          "type": "string",
+          "default": "p",
+          "description": "map key for toggle preview. Default: \"p\""
+        },
+        "todo-tree.switchViewKey": {
+          "type": "string",
+          "default": "C",
+          "description": "map key for switch view. Default: \"C\""
+        },
+        "todo-tree.autoPreview": {
+          "type": "boolean",
+          "default": true,
+          "description": "auto preview. Default: true"
+        },
+        "todo-tree.previewWinConfig": {
+          "type": "object",
+          "default": {
+            "border": true,
+            "rounded": false,
+            "highlight": "Normal",
+            "borderhighlight": "Normal",
+            "winblend": 0
+          },
+          "description": "preview floating window config"
+        },
+        "todo-tree.filterFilesRegex": {
+          "type": "array",
+          "default": [
+            ".*yarn\\.lock$"
+          ],
+          "description": "filtering files. test file path by regex. regex required. Default: [\".*yarn\\\\.lock$\"]"
+        }
+      }
+    }
+  }
+}
