@@ -1,8 +1,8 @@
-import { ExtensionContext, Logger } from 'coc.nvim'
+import { ExtensionContext, Logger, workspace } from 'coc.nvim'
 import { extensionName, configuration } from './constants'
 import TodoTree from './tree'
 import { commands } from 'coc.nvim'
-import { TupleToObject } from './helpers'
+import { registerRuntimepath, TupleToObject } from './helpers'
 
 export type CommandsParameters = TupleToObject<
   Parameters<typeof commands.registerCommand>,
@@ -24,6 +24,8 @@ export async function activate(context: ExtensionContext): Promise<void> {
   const { subscriptions, logger } = context
   _logger = logger
   const todoTree = new TodoTree()
+
+  await registerRuntimepath(context.extensionPath)
 
   subscriptions.push(...generateCommands(extensionName, todoTree.commandsMap))
 
