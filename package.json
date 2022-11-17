@@ -1,7 +1,7 @@
 {
   "name": "coc-todo-tree",
   "version": "0.0.1",
-  "description": "Todo tree extension for coc.nvim, forked from Gruntfuggly/todo-tree.",
+  "description": "Todo tree integration of coc.nvim",
   "main": "lib/index.js",
   "engines": {
     "coc": "^0.0.82"
@@ -16,44 +16,11 @@
     "*"
   ],
   "scripts": {
-    "lint": "eslint src --ext ts",
-    "clean": "rimraf lib",
-    "watch": "yarn && NODE_ENV=development node esbuild.js --watch",
-    "build": "yarn && NODE_ENV=development node esbuild.js",
-    "prepare": "husky install && yarn clean"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,cjs,mjs}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,css,less,sass,scss}": [
-      "prettier --write"
-    ]
+    "release": "git checkout master -- ./README.md && cp ./build/index.js ./lib && rm -rf ./build"
   },
   "repository": "git@github.com:hexh250786313/coc-todo-tree.git",
   "author": "hexh <250786313@qq.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@tsconfig/recommended": "^1.0.1",
-    "@types/fs-extra": "^9.0.13",
-    "@types/node": "^18.8.3",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
-    "@typescript-eslint/parser": "^5.36.2",
-    "esbuild": "^0.15.7",
-    "eslint": "^8.23.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "rimraf": "^3.0.2",
-    "coc.nvim": "^0.0.82",
-    "fs-extra": "^10.1.0",
-    "typescript": "^4.8.3",
-    "vscode-uri": "^3.0.6"
-  },
-  "dependencies": {},
   "contributes": {
     "configuration": {
       "type": "object",

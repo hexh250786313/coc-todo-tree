@@ -103,6 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-lib/
+build
 .git
-tags
+.husky
