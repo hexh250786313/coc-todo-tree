@@ -4,7 +4,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es2017",
-    "outDir": "lib",
+    "outDir": "build",
     "rootDir": "src",
     "lib": ["es2017"],
     "sourceMap": true,
@@ -16,6 +16,6 @@
   },
   "typeRoots": ["node_modules", "node_modules/@types", "definitions"],
   "include": ["src/**/*.ts", "src/*.ts", "./global.d.ts"],
-  "exclude": ["node_modules", "lib"],
+  "exclude": ["node_modules", "build"],
   "extends": "@tsconfig/recommended/tsconfig.json"
 }

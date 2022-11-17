@@ -1,8 +1,8 @@
 {
   "name": "coc-todo-tree",
-  "version": "0.0.1",
-  "description": "Todo tree extension for coc.nvim, forked from Gruntfuggly/todo-tree.",
-  "main": "lib/index.js",
+  "version": "0.0.0-dev",
+  "description": "Todo tree integration of coc.nvim",
+  "main": "build/index.js",
   "engines": {
     "coc": "^0.0.82"
   },
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "lint": "eslint src --ext ts",
-    "clean": "rimraf lib",
+    "clean": "rimraf build",
     "watch": "yarn && NODE_ENV=development node esbuild.js --watch",
     "build": "yarn && NODE_ENV=development node esbuild.js",
     "prepare": "husky install && yarn clean"

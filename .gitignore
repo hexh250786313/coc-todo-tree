@@ -104,5 +104,6 @@ dist
 .tern-port
 
 lib/
+build/
 .git
 tags
