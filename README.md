@@ -4,6 +4,8 @@ Todo tree integration of [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 Inspired by [vscode-todo-tree](https://github.com/Gruntfuggly/todo-tree)
 
+https://user-images.githubusercontent.com/26080416/202518338-543cf638-396d-48dd-8fff-8097662bf3ca.mp4
+
 ## Install
 
 You need to have coc.nvim installed for this extension to work
