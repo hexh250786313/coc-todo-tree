@@ -4,5 +4,5 @@ function! DebugCocTodoTree()
 endfunction
 
 set runtimepath^=~/workspace/coc-todo-tree
-let g:coc_node_args = ["--nolazy", "--inspect=6045"]
+let g:coc_node_args = ["--nolazy", "--inspect=6989"]
 ]])

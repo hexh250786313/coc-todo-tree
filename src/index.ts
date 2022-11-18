@@ -25,7 +25,9 @@ export async function activate(context: ExtensionContext): Promise<void> {
   _logger = logger
   const todoTree = new TodoTree()
 
-  await registerRuntimepath(context.extensionPath)
+  if (process.debugPort !== 6989) {
+    await registerRuntimepath(context.extensionPath)
+  }
 
   subscriptions.push(...generateCommands(extensionName, todoTree.commandsMap))
 

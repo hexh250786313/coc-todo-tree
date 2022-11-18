@@ -19,7 +19,7 @@
     "lint": "eslint src --ext ts",
     "clean": "rimraf build",
     "watch": "yarn && NODE_ENV=development node esbuild.js --watch",
-    "build": "yarn && NODE_ENV=development node esbuild.js",
+    "build": "yarn && NODE_ENV=production node esbuild.js",
     "prepare": "husky install && yarn clean"
   },
   "lint-staged": {

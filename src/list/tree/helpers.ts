@@ -69,6 +69,8 @@ export const buildTree = (data: IFlattenRes[]) =>
     .reduce((total, current, currentIndex) => {
       if (currentIndex === 0 && current.sourcePath === workspace.cwd) {
         total = current.children
+      } else {
+        total.push(current)
       }
       return total
     }, [] as TodoNode[])
