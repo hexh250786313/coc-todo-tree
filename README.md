@@ -1,3 +1,5 @@
+[ 中文说明 ](https://blog.hexuhua.vercel.app/post/27)
+
 # coc-todo-tree
 
 Todo tree integration of [coc.nvim](https://github.com/neoclide/coc.nvim)
