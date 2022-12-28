@@ -16,6 +16,14 @@ You need to have coc.nvim installed for this extension to work
 :CocInstall coc-todo-tree
 ```
 
+## Usage
+
+Run this to open todo-tree:
+
+```
+:CocCommand coc-todo-tree.showTree
+```
+
 ## Feature
 
 - Using coc-tree (for tree view) to list all tags like @todo / FIXME in your workspace
