@@ -1,3 +1,5 @@
+[ 中文说明 ](https://blog.hexuhua.vercel.app/post/27)
+
 # coc-todo-tree
 
 Todo tree integration of [coc.nvim](https://github.com/neoclide/coc.nvim)
@@ -12,6 +14,14 @@ You need to have coc.nvim installed for this extension to work
 
 ```
 :CocInstall coc-todo-tree
+```
+
+## Usage
+
+Run this to open todo-tree:
+
+```
+:CocCommand coc-todo-tree.showTree
 ```
 
 ## Feature
