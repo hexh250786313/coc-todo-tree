@@ -29,6 +29,7 @@
   "todo-tree.toggleGroupByTagKey": "c",
   "todo-tree.switchViewKey": "C",
   "todo-tree.togglePreviewKey": "p",
+  "todo-tree.invokeKey": "<cr>",
   "todo-tree.autoPreview": true,
   "todo-tree.previewWinConfig": {
     "border": true,
