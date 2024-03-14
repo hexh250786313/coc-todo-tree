@@ -1,6 +1,6 @@
 {
   "name": "coc-todo-tree",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Todo tree integration of coc.nvim",
   "main": "lib/index.js",
   "engines": {
@@ -131,6 +131,11 @@
           "type": "string",
           "default": "C",
           "description": "map key for switch view. Default: \"C\""
+        },
+        "todo-tree.invokeKey": {
+          "type": "string",
+          "default": "<cr>",
+          "description": "map key for jumping to target or toggle expand/collapse node. Default: \"<cr>\""
         },
         "todo-tree.autoPreview": {
           "type": "boolean",
