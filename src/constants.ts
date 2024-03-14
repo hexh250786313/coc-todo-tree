@@ -52,6 +52,7 @@ export interface TodoTreeConfiguration {
   fileIcon?: IIcon
   parentNodeHighlightEnabled: boolean
   groupTagIconHighlight: string
+  invokeKey: string
   toggleGroupByTagKey: string
   togglePreviewKey: string
   refreshItemsKey: string

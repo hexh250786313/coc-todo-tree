@@ -165,6 +165,11 @@
           "default": "C",
           "description": "map key for switch view. Default: \"C\""
         },
+        "todo-tree.invokeKey": {
+          "type": "string",
+          "default": "<cr>",
+          "description": "map key for jumping to target or toggle expand/collapse node. Default: \"<cr>\""
+        },
         "todo-tree.autoPreview": {
           "type": "boolean",
           "default": true,

@@ -385,6 +385,23 @@ class TodoTree {
     // @ts-ignore
     this._treeView.registerLocalKeymap(
       'n',
+      configuration.invokeKey,
+      async (node: TodoNode) => {
+        // @ts-ignore
+        if (isParent(node)) {
+          // @ts-ignore
+          this._treeView.toggleExpand(node)
+        } else {
+          // @ts-ignore
+          this._treeView.invokeCommand(node)
+        }
+      },
+      true
+    )
+
+    // @ts-ignore
+    this._treeView.registerLocalKeymap(
+      'n',
       configuration.togglePreviewKey,
       async (node: TodoNode) => {
         this.autoPreview = !this.autoPreview
