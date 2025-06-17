@@ -1,6 +1,6 @@
 {
   "name": "coc-todo-tree",
-  "version": "0.0.15",
+  "version": "0.0.18",
   "description": "Todo tree integration of coc.nvim",
   "main": "lib/index.js",
   "engines": {
