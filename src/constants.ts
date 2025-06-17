@@ -36,7 +36,9 @@ const nextConfig = {} as TodoTreeConfiguration
 if (_configuration && _configuration.tags) {
   nextConfig.tags = _configuration.tags.filter(
     (item, index, self) =>
-      self.findIndex((t) => t.tagName === item.tagName) === index
+      self.findIndex(
+        (t) => t.tagName === item.tagName && t.regex === item.regex
+      ) === index
   )
 }
 
