@@ -40,7 +40,7 @@ function! coc_todo_tree#preview(config) abort
   call setwinvar(result[0], 'kind', s:key)
   let s:todo_tree_preview_bufnr = result[1]
   if !empty(filetype)
-    call coc#compat#execute(result[0], 'setfiletype '.filetype)
+    call win_execute(result[0], 'setfiletype '.filetype)
   endif
   return result[1]
 endfunction
